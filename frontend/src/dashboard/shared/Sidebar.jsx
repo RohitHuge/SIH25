@@ -68,29 +68,42 @@ const Sidebar = ({ role = 'uploader' }) => {
       case 'admin':
         return [
           {
-            id: 'overview',
-            label: 'Overview',
-            icon: '📈',
-            path: `/dashboard/${userRole}/overview`
-          },
-          {
-            id: 'users',
-            label: 'Manage Users',
-            icon: '👥',
-            path: `/dashboard/${userRole}/users`
-          },
-          {
-            id: 'reports',
-            label: 'Reports',
+            id: 'dashboard',
+            label: 'Dashboard',
             icon: '📊',
-            path: `/dashboard/${userRole}/reports`
+            path: `/dashboard/${userRole}/dashboard`
           },
           {
-            id: 'settings',
+            id: 'user-management',
+            label: 'User Management',
+            icon: '👥',
+            path: `/dashboard/${userRole}/user-management`
+          },
+          {
+            id: 'fraud-reports',
+            label: 'Fraud Reports',
+            icon: '⚠️',
+            path: `/dashboard/${userRole}/fraud-reports`
+          },
+          {
+            id: 'document-analytics',
+            label: 'Document Analytics',
+            icon: '📑',
+            path: `/dashboard/${userRole}/document-analytics`
+          },
+          {
+            id: 'system-settings',
             label: 'System Settings',
             icon: '⚙️',
-            path: `/dashboard/${userRole}/settings`
-          }
+            path: `/dashboard/${userRole}/system-settings`
+          },
+          {
+            id: 'audit-logs',
+            label: 'Audit Logs',
+            icon: '🕑',
+            path: `/dashboard/${userRole}/audit-logs`
+          },
+          ...baseItems
         ];
       default:
         return baseItems;

@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import UploaderDashboard from './dashboard/uploader/UploaderDashboard'
 import VerifierDashboard from './dashboard/verifier/VerifierDashboard'
+import AdminDashboard from './dashboard/admin/AdminDashboard'
 import ConfigError from './components/ConfigError'
 import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
@@ -48,6 +49,11 @@ const AppContent = () => {
       <Route path="/dashboard/verifier/*" element={
         <RoleProtectedRoute allowedRoles={['verifier']}>
           <VerifierDashboard />
+        </RoleProtectedRoute>
+      } />
+      <Route path="/dashboard/admin/*" element={
+        <RoleProtectedRoute allowedRoles={['admin']}>
+          <AdminDashboard />
         </RoleProtectedRoute>
       } />
     </Routes>
