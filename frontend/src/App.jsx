@@ -5,9 +5,12 @@ import { AuthProvider, useAuth } from './context/AuthContext'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import UploaderDashboard from './dashboard/uploader/UploaderDashboard'
+import VerifierDashboard from './dashboard/verifier/VerifierDashboard'
 import ConfigError from './components/ConfigError'
 import ProtectedRoute from './components/ProtectedRoute'
 import PublicRoute from './components/PublicRoute'
+import RoleProtectedRoute from './components/RoleProtectedRoute'
+import RoleBasedRedirect from './components/RoleBasedRedirect'
 
 // Component to handle auth configuration errors
 const AppContent = () => {
@@ -34,13 +37,18 @@ const AppContent = () => {
       {/* Protected routes - require authentication */}
       <Route path="/dashboard" element={
         <ProtectedRoute>
-          <Dashboard />
+          <RoleBasedRedirect />
         </ProtectedRoute>
       } />
       <Route path="/dashboard/uploader/*" element={
-        <ProtectedRoute>
+        <RoleProtectedRoute allowedRoles={['uploader']}>
           <UploaderDashboard />
-        </ProtectedRoute>
+        </RoleProtectedRoute>
+      } />
+      <Route path="/dashboard/verifier/*" element={
+        <RoleProtectedRoute allowedRoles={['verifier']}>
+          <VerifierDashboard />
+        </RoleProtectedRoute>
       } />
     </Routes>
   );

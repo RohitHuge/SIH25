@@ -66,14 +66,14 @@ const LoginPage = () => {
         email: formData.email,
         password: formData.password
       });
+      console.log(result.user.labels[0]);
 
       if (result.success) {
         success('Login successful! Redirecting to dashboard...');
-        setTimeout(() => {
-          // Redirect to the intended destination or default to uploader dashboard
-          const from = location.state?.from?.pathname || '/dashboard/uploader';
-          navigate(from, { replace: true });
-        }, 2000);
+        // Let RoleProtectedRoute handle role-based routing
+        // Redirect to a generic dashboard route that will be handled by role-based routing
+        const from = location.state?.from?.pathname || '/dashboard';
+        navigate(from, { replace: true });
       }
     } catch (error) {
       console.error('Login error:', error);

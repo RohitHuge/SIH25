@@ -40,9 +40,8 @@ const RoleProtectedRoute = ({ children, allowedRoles = [] }) => {
   }
 
   // Check if user has required role
-  // For now, we'll use a mock role system
-  // In a real app, this would come from the user object
-  const userRole = 'uploader'; // This would be user.role in a real app
+  // Get role from user.labels[0] as specified
+  const userRole = user?.labels?.[0] || 'uploader'; // Default to uploader if no role found
   
   if (!allowedRoles.includes(userRole)) {
     return (
@@ -69,10 +68,14 @@ const RoleProtectedRoute = ({ children, allowedRoles = [] }) => {
               Go Back
             </button>
             <button
-              onClick={() => navigate('/dashboard/uploader')}
+              onClick={() => {
+                // Redirect to appropriate dashboard based on user role
+                const userRole = user?.labels?.[0] || 'uploader';
+                navigate(`/dashboard/${userRole}`);
+              }}
               className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
-              Go to Dashboard
+              Go to My Dashboard
             </button>
           </div>
         </motion.div>

@@ -46,22 +46,22 @@ const Sidebar = ({ role = 'uploader' }) => {
       case 'verifier':
         return [
           {
-            id: 'verify',
-            label: 'Verify Documents',
+            id: 'verify-qr',
+            label: 'Verify with QR',
             icon: '🔍',
-            path: `/dashboard/${userRole}/verify`
+            path: `/dashboard/${userRole}/verify-qr`
           },
           {
-            id: 'pending',
-            label: 'Pending Verifications',
-            icon: '⏳',
-            path: `/dashboard/${userRole}/pending`
+            id: 'verify-old-document',
+            label: 'Verify Old Document',
+            icon: '📑',
+            path: `/dashboard/${userRole}/verify-old-document`
           },
           {
-            id: 'history',
+            id: 'verification-history',
             label: 'Verification History',
-            icon: '📊',
-            path: `/dashboard/${userRole}/history`
+            icon: '🕑',
+            path: `/dashboard/${userRole}/verification-history`
           },
           ...baseItems
         ];
