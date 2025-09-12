@@ -18,67 +18,134 @@ const FraudReports = () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Mock data
+    // Mock data (Jharkhand context)
     setFraudReports([
       {
         id: 'FR001',
-        documentId: 'DOC123456',
-        studentName: 'John Smith',
-        institute: 'MIT',
+        documentId: 'DOCJHK1001',
+        studentName: 'Amit Kumar',
+        institute: 'Ranchi University',
         reason: 'QR Code Mismatch',
         status: 'confirmed',
-        date: '2024-01-15',
+        date: '2024-02-10',
         severity: 'high',
-        verifier: 'Dr. Emily Davis'
+        verifier: 'Dr. Sandeep Das'
       },
       {
         id: 'FR002',
-        documentId: 'DOC123457',
-        studentName: 'Sarah Johnson',
-        institute: 'Stanford',
+        documentId: 'DOCJHK1002',
+        studentName: 'Priya Singh',
+        institute: 'BIT Mesra',
         reason: 'Document Tampering',
         status: 'investigating',
-        date: '2024-01-14',
+        date: '2024-02-09',
         severity: 'critical',
-        verifier: 'Prof. Robert Brown'
+        verifier: 'Prof. Anjali Kumari'
       },
       {
         id: 'FR003',
-        documentId: 'DOC123458',
-        studentName: 'Mike Wilson',
-        institute: 'Harvard',
+        documentId: 'DOCJHK1003',
+        studentName: 'Ravi Prasad',
+        institute: 'Vinoba Bhave University',
         reason: 'Fake Institution',
         status: 'resolved',
-        date: '2024-01-13',
+        date: '2024-02-08',
         severity: 'high',
-        verifier: 'Dr. Lisa Garcia'
+        verifier: 'Dr. Rajesh Kumar'
       },
       {
         id: 'FR004',
-        documentId: 'DOC123459',
-        studentName: 'Emma Davis',
-        institute: 'Berkeley',
+        documentId: 'DOCJHK1004',
+        studentName: 'Anjali Kumari',
+        institute: 'Kolhan University',
         reason: 'Duplicate Document',
         status: 'confirmed',
-        date: '2024-01-12',
+        date: '2024-02-07',
         severity: 'medium',
-        verifier: 'Dr. Emily Davis'
+        verifier: 'Dr. Sandeep Das'
       },
       {
         id: 'FR005',
-        documentId: 'DOC123460',
-        studentName: 'Alex Brown',
-        institute: 'Caltech',
+        documentId: 'DOCJHK1005',
+        studentName: 'Saurav Kumar',
+        institute: 'National University of Study and Research in Law (NUSRL), Ranchi',
         reason: 'Invalid QR Code',
         status: 'investigating',
-        date: '2024-01-11',
+        date: '2024-02-06',
         severity: 'high',
-        verifier: 'Prof. Robert Brown'
+        verifier: 'Prof. Anjali Kumari'
       }
     ]);
     
     setIsLoading(false);
   };
+  
+
+  // const loadFraudReports = async () => {
+  //   setIsLoading(true);
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   // Mock data
+  //   setFraudReports([
+  //     {
+  //       id: 'FR001',
+  //       documentId: 'DOC123456',
+  //       studentName: 'John Smith',
+  //       institute: 'MIT',
+  //       reason: 'QR Code Mismatch',
+  //       status: 'confirmed',
+  //       date: '2024-01-15',
+  //       severity: 'high',
+  //       verifier: 'Dr. Emily Davis'
+  //     },
+  //     {
+  //       id: 'FR002',
+  //       documentId: 'DOC123457',
+  //       studentName: 'Sarah Johnson',
+  //       institute: 'Stanford',
+  //       reason: 'Document Tampering',
+  //       status: 'investigating',
+  //       date: '2024-01-14',
+  //       severity: 'critical',
+  //       verifier: 'Prof. Robert Brown'
+  //     },
+  //     {
+  //       id: 'FR003',
+  //       documentId: 'DOC123458',
+  //       studentName: 'Mike Wilson',
+  //       institute: 'Harvard',
+  //       reason: 'Fake Institution',
+  //       status: 'resolved',
+  //       date: '2024-01-13',
+  //       severity: 'high',
+  //       verifier: 'Dr. Lisa Garcia'
+  //     },
+  //     {
+  //       id: 'FR004',
+  //       documentId: 'DOC123459',
+  //       studentName: 'Emma Davis',
+  //       institute: 'Berkeley',
+  //       reason: 'Duplicate Document',
+  //       status: 'confirmed',
+  //       date: '2024-01-12',
+  //       severity: 'medium',
+  //       verifier: 'Dr. Emily Davis'
+  //     },
+  //     {
+  //       id: 'FR005',
+  //       documentId: 'DOC123460',
+  //       studentName: 'Alex Brown',
+  //       institute: 'Caltech',
+  //       reason: 'Invalid QR Code',
+  //       status: 'investigating',
+  //       date: '2024-01-11',
+  //       severity: 'high',
+  //       verifier: 'Prof. Robert Brown'
+  //     }
+  //   ]);
+    
+  //   setIsLoading(false);
+  // };
 
   const handleExport = async (format) => {
     try {

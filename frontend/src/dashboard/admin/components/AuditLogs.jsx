@@ -18,100 +18,200 @@ const AuditLogs = () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Mock data
+    // Mock data (Jharkhand context)
     setAuditLogs([
       {
         id: 1,
-        timestamp: '2024-01-15T10:30:00Z',
-        user: 'John Smith',
+        timestamp: '2024-02-15T10:30:00Z',
+        user: 'Amit Kumar',
         userRole: 'uploader',
         action: 'login',
         details: 'User logged in successfully',
-        ipAddress: '192.168.1.100',
+        ipAddress: '103.87.45.210', // Ranchi ISP
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         status: 'success'
       },
       {
         id: 2,
-        timestamp: '2024-01-15T10:25:00Z',
-        user: 'Dr. Emily Davis',
+        timestamp: '2024-02-15T10:25:00Z',
+        user: 'Dr. Sandeep Das',
         userRole: 'verifier',
         action: 'verify_document',
-        details: 'Document DOC123456 verified successfully',
-        ipAddress: '192.168.1.101',
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        details: 'Document DOCJHK2001 verified successfully',
+        ipAddress: '103.90.66.112', // Jamshedpur ISP
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/537.36',
         status: 'success'
       },
       {
         id: 3,
-        timestamp: '2024-01-15T10:20:00Z',
-        user: 'Sarah Johnson',
+        timestamp: '2024-02-15T10:20:00Z',
+        user: 'Priya Singh',
         userRole: 'uploader',
         action: 'upload_document',
-        details: 'Document DOC123457 uploaded',
-        ipAddress: '192.168.1.102',
+        details: 'Document DOCJHK2002 uploaded',
+        ipAddress: '103.75.19.88', // Dhanbad ISP
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         status: 'success'
       },
       {
         id: 4,
-        timestamp: '2024-01-15T10:15:00Z',
-        user: 'Mike Wilson',
+        timestamp: '2024-02-15T10:15:00Z',
+        user: 'Ravi Prasad',
         userRole: 'uploader',
         action: 'login',
         details: 'Failed login attempt - invalid credentials',
-        ipAddress: '192.168.1.103',
+        ipAddress: '103.224.56.34', // Bokaro ISP
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         status: 'failed'
       },
       {
         id: 5,
-        timestamp: '2024-01-15T10:10:00Z',
+        timestamp: '2024-02-15T10:10:00Z',
         user: 'Admin User',
         userRole: 'admin',
         action: 'user_management',
-        details: 'Disabled user account for Alex Brown',
-        ipAddress: '192.168.1.104',
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        details: 'Disabled user account for Saurav Kumar',
+        ipAddress: '103.241.98.176', // Ranchi admin office
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12_6) AppleWebKit/537.36',
         status: 'success'
       },
       {
         id: 6,
-        timestamp: '2024-01-15T10:05:00Z',
-        user: 'Prof. Robert Brown',
+        timestamp: '2024-02-15T10:05:00Z',
+        user: 'Prof. Anjali Kumari',
         userRole: 'verifier',
         action: 'verify_document',
-        details: 'Document DOC123458 marked as fraud',
-        ipAddress: '192.168.1.105',
+        details: 'Document DOCJHK2003 marked as fraud',
+        ipAddress: '103.225.44.93', // Hazaribagh ISP
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         status: 'success'
       },
       {
         id: 7,
-        timestamp: '2024-01-15T10:00:00Z',
-        user: 'Emma Davis',
+        timestamp: '2024-02-15T10:00:00Z',
+        user: 'Anjali Kumari',
         userRole: 'uploader',
         action: 'logout',
         details: 'User logged out',
-        ipAddress: '192.168.1.106',
-        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15',
+        ipAddress: '103.75.44.221', // Deoghar ISP
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15',
         status: 'success'
       },
       {
         id: 8,
-        timestamp: '2024-01-15T09:55:00Z',
-        user: 'Dr. Lisa Garcia',
+        timestamp: '2024-02-15T09:55:00Z',
+        user: 'Dr. Rajesh Kumar',
         userRole: 'verifier',
         action: 'system_settings',
         details: 'Updated OCR provider settings',
-        ipAddress: '192.168.1.107',
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        ipAddress: '103.81.120.55', // Ranchi ISP
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/537.36',
         status: 'success'
       }
     ]);
     
     setIsLoading(false);
   };
+  
+
+  // const loadAuditLogs = async () => {
+  //   setIsLoading(true);
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   // Mock data
+  //   setAuditLogs([
+  //     {
+  //       id: 1,
+  //       timestamp: '2024-01-15T10:30:00Z',
+  //       user: 'John Smith',
+  //       userRole: 'uploader',
+  //       action: 'login',
+  //       details: 'User logged in successfully',
+  //       ipAddress: '192.168.1.100',
+  //       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 2,
+  //       timestamp: '2024-01-15T10:25:00Z',
+  //       user: 'Dr. Emily Davis',
+  //       userRole: 'verifier',
+  //       action: 'verify_document',
+  //       details: 'Document DOC123456 verified successfully',
+  //       ipAddress: '192.168.1.101',
+  //       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 3,
+  //       timestamp: '2024-01-15T10:20:00Z',
+  //       user: 'Sarah Johnson',
+  //       userRole: 'uploader',
+  //       action: 'upload_document',
+  //       details: 'Document DOC123457 uploaded',
+  //       ipAddress: '192.168.1.102',
+  //       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 4,
+  //       timestamp: '2024-01-15T10:15:00Z',
+  //       user: 'Mike Wilson',
+  //       userRole: 'uploader',
+  //       action: 'login',
+  //       details: 'Failed login attempt - invalid credentials',
+  //       ipAddress: '192.168.1.103',
+  //       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  //       status: 'failed'
+  //     },
+  //     {
+  //       id: 5,
+  //       timestamp: '2024-01-15T10:10:00Z',
+  //       user: 'Admin User',
+  //       userRole: 'admin',
+  //       action: 'user_management',
+  //       details: 'Disabled user account for Alex Brown',
+  //       ipAddress: '192.168.1.104',
+  //       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 6,
+  //       timestamp: '2024-01-15T10:05:00Z',
+  //       user: 'Prof. Robert Brown',
+  //       userRole: 'verifier',
+  //       action: 'verify_document',
+  //       details: 'Document DOC123458 marked as fraud',
+  //       ipAddress: '192.168.1.105',
+  //       userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 7,
+  //       timestamp: '2024-01-15T10:00:00Z',
+  //       user: 'Emma Davis',
+  //       userRole: 'uploader',
+  //       action: 'logout',
+  //       details: 'User logged out',
+  //       ipAddress: '192.168.1.106',
+  //       userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15',
+  //       status: 'success'
+  //     },
+  //     {
+  //       id: 8,
+  //       timestamp: '2024-01-15T09:55:00Z',
+  //       user: 'Dr. Lisa Garcia',
+  //       userRole: 'verifier',
+  //       action: 'system_settings',
+  //       details: 'Updated OCR provider settings',
+  //       ipAddress: '192.168.1.107',
+  //       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+  //       status: 'success'
+  //     }
+  //   ]);
+    
+  //   setIsLoading(false);
+  // };
 
   const handleExport = async (format) => {
     try {

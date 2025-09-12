@@ -10,58 +10,61 @@ const MyUploads = () => {
   const [sortBy, setSortBy] = useState('date');
 
   // Mock data
+  // 
+  
   const mockUploads = [
     {
       id: 1,
-      studentName: 'John Doe',
-      studentId: 'STU001',
-      degree: 'Bachelor of Computer Science',
+      studentName: 'Amit Kumar',
+      studentId: 'JHK001',
+      degree: 'Bachelor of Arts in Political Science',
       status: 'processed',
-      uploadedAt: '2024-01-15T10:30:00Z',
-      fileSize: '2.5 MB',
-      fileName: 'john_doe_transcript.pdf'
+      uploadedAt: '2024-02-10T10:15:00Z',
+      fileSize: '2.3 MB',
+      fileName: 'amit_kumar_transcript.pdf'
     },
     {
       id: 2,
-      studentName: 'Jane Smith',
-      studentId: 'STU002',
-      degree: 'Master of Business Administration',
+      studentName: 'Priya Singh',
+      studentId: 'JHK002',
+      degree: 'Master of Science in Physics',
       status: 'processing',
-      uploadedAt: '2024-01-14T14:20:00Z',
-      fileSize: '1.8 MB',
-      fileName: 'jane_smith_degree.pdf'
+      uploadedAt: '2024-02-09T13:45:00Z',
+      fileSize: '1.9 MB',
+      fileName: 'priya_singh_degree.pdf'
     },
     {
       id: 3,
-      studentName: 'Mike Johnson',
-      studentId: 'STU003',
-      degree: 'Bachelor of Engineering',
+      studentName: 'Ravi Prasad',
+      studentId: 'JHK003',
+      degree: 'Bachelor of Technology in Civil Engineering',
       status: 'pending',
-      uploadedAt: '2024-01-13T09:15:00Z',
-      fileSize: '3.2 MB',
-      fileName: 'mike_johnson_certificate.pdf'
+      uploadedAt: '2024-02-08T09:20:00Z',
+      fileSize: '3.4 MB',
+      fileName: 'ravi_prasad_certificate.pdf'
     },
     {
       id: 4,
-      studentName: 'Sarah Wilson',
-      studentId: 'STU004',
-      degree: 'Master of Science',
+      studentName: 'Anjali Kumari',
+      studentId: 'JHK004',
+      degree: 'Master of Commerce',
       status: 'processed',
-      uploadedAt: '2024-01-12T16:45:00Z',
-      fileSize: '2.1 MB',
-      fileName: 'sarah_wilson_transcript.pdf'
+      uploadedAt: '2024-02-07T17:05:00Z',
+      fileSize: '2.0 MB',
+      fileName: 'anjali_kumari_transcript.pdf'
     },
     {
       id: 5,
-      studentName: 'David Brown',
-      studentId: 'STU005',
-      degree: 'Bachelor of Arts',
+      studentName: 'Saurav Kumar',
+      studentId: 'JHK005',
+      degree: 'Bachelor of Computer Applications',
       status: 'failed',
-      uploadedAt: '2024-01-11T11:30:00Z',
-      fileSize: '1.5 MB',
-      fileName: 'david_brown_degree.pdf'
+      uploadedAt: '2024-02-06T11:10:00Z',
+      fileSize: '1.7 MB',
+      fileName: 'saurav_kumar_degree.pdf'
     }
   ];
+  
 
   useEffect(() => {
     // Simulate API call

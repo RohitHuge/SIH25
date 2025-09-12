@@ -18,67 +18,134 @@ const DocumentAnalytics = () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Mock data
+    // Mock data (Jharkhand context)
     setDocuments([
       {
-        id: 'DOC123456',
-        studentName: 'John Smith',
-        degree: 'Bachelor of Computer Science',
+        id: 'DOCJHK2001',
+        studentName: 'Amit Kumar',
+        degree: 'Bachelor of Arts in Political Science',
         status: 'verified',
-        uploadedBy: 'John Smith',
-        uploadDate: '2024-01-15',
-        institute: 'MIT',
-        verifier: 'Dr. Emily Davis',
-        verificationDate: '2024-01-16'
+        uploadedBy: 'Amit Kumar',
+        uploadDate: '2024-02-10',
+        institute: 'Ranchi University',
+        verifier: 'Dr. Sandeep Das',
+        verificationDate: '2024-02-11'
       },
       {
-        id: 'DOC123457',
-        studentName: 'Sarah Johnson',
-        degree: 'Master of Engineering',
+        id: 'DOCJHK2002',
+        studentName: 'Priya Singh',
+        degree: 'Master of Engineering in Computer Science',
         status: 'pending',
-        uploadedBy: 'Sarah Johnson',
-        uploadDate: '2024-01-14',
-        institute: 'Stanford',
+        uploadedBy: 'Priya Singh',
+        uploadDate: '2024-02-09',
+        institute: 'BIT Mesra',
         verifier: null,
         verificationDate: null
       },
       {
-        id: 'DOC123458',
-        studentName: 'Mike Wilson',
+        id: 'DOCJHK2003',
+        studentName: 'Ravi Prasad',
         degree: 'PhD in Physics',
         status: 'fraud',
-        uploadedBy: 'Mike Wilson',
-        uploadDate: '2024-01-13',
-        institute: 'Harvard',
-        verifier: 'Prof. Robert Brown',
-        verificationDate: '2024-01-14'
+        uploadedBy: 'Ravi Prasad',
+        uploadDate: '2024-02-08',
+        institute: 'Vinoba Bhave University',
+        verifier: 'Prof. Anjali Kumari',
+        verificationDate: '2024-02-09'
       },
       {
-        id: 'DOC123459',
-        studentName: 'Emma Davis',
-        degree: 'Bachelor of Arts',
+        id: 'DOCJHK2004',
+        studentName: 'Anjali Kumari',
+        degree: 'Bachelor of Commerce',
         status: 'verified',
-        uploadedBy: 'Emma Davis',
-        uploadDate: '2024-01-12',
-        institute: 'Berkeley',
-        verifier: 'Dr. Lisa Garcia',
-        verificationDate: '2024-01-13'
+        uploadedBy: 'Anjali Kumari',
+        uploadDate: '2024-02-07',
+        institute: 'Kolhan University',
+        verifier: 'Dr. Rajesh Kumar',
+        verificationDate: '2024-02-08'
       },
       {
-        id: 'DOC123460',
-        studentName: 'Alex Brown',
-        degree: 'Master of Science',
+        id: 'DOCJHK2005',
+        studentName: 'Saurav Kumar',
+        degree: 'Master of Science in Mathematics',
         status: 'rejected',
-        uploadedBy: 'Alex Brown',
-        uploadDate: '2024-01-11',
-        institute: 'Caltech',
-        verifier: 'Dr. Emily Davis',
-        verificationDate: '2024-01-12'
+        uploadedBy: 'Saurav Kumar',
+        uploadDate: '2024-02-06',
+        institute: 'NUSRL Ranchi',
+        verifier: 'Dr. Sandeep Das',
+        verificationDate: '2024-02-07'
       }
     ]);
     
     setIsLoading(false);
   };
+  
+
+  // const loadDocuments = async () => {
+  //   setIsLoading(true);
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   // Mock data
+  //   setDocuments([
+  //     {
+  //       id: 'DOC123456',
+  //       studentName: 'John Smith',
+  //       degree: 'Bachelor of Computer Science',
+  //       status: 'verified',
+  //       uploadedBy: 'John Smith',
+  //       uploadDate: '2024-01-15',
+  //       institute: 'MIT',
+  //       verifier: 'Dr. Emily Davis',
+  //       verificationDate: '2024-01-16'
+  //     },
+  //     {
+  //       id: 'DOC123457',
+  //       studentName: 'Sarah Johnson',
+  //       degree: 'Master of Engineering',
+  //       status: 'pending',
+  //       uploadedBy: 'Sarah Johnson',
+  //       uploadDate: '2024-01-14',
+  //       institute: 'Stanford',
+  //       verifier: null,
+  //       verificationDate: null
+  //     },
+  //     {
+  //       id: 'DOC123458',
+  //       studentName: 'Mike Wilson',
+  //       degree: 'PhD in Physics',
+  //       status: 'fraud',
+  //       uploadedBy: 'Mike Wilson',
+  //       uploadDate: '2024-01-13',
+  //       institute: 'Harvard',
+  //       verifier: 'Prof. Robert Brown',
+  //       verificationDate: '2024-01-14'
+  //     },
+  //     {
+  //       id: 'DOC123459',
+  //       studentName: 'Emma Davis',
+  //       degree: 'Bachelor of Arts',
+  //       status: 'verified',
+  //       uploadedBy: 'Emma Davis',
+  //       uploadDate: '2024-01-12',
+  //       institute: 'Berkeley',
+  //       verifier: 'Dr. Lisa Garcia',
+  //       verificationDate: '2024-01-13'
+  //     },
+  //     {
+  //       id: 'DOC123460',
+  //       studentName: 'Alex Brown',
+  //       degree: 'Master of Science',
+  //       status: 'rejected',
+  //       uploadedBy: 'Alex Brown',
+  //       uploadDate: '2024-01-11',
+  //       institute: 'Caltech',
+  //       verifier: 'Dr. Emily Davis',
+  //       verificationDate: '2024-01-12'
+  //     }
+  //   ]);
+    
+  //   setIsLoading(false);
+  // };
 
   const handleDeleteDocument = async (documentId) => {
     try {

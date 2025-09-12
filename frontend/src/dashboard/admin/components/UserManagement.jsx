@@ -14,79 +14,154 @@ const UserManagement = () => {
     loadUsers();
   }, []);
 
+  // const loadUsers = async () => {
+  //   setIsLoading(true);
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   // Mock data
+  //   setUploaders([
+  //     {
+  //       id: 1,
+  //       name: 'John Smith',
+  //       email: 'john.smith@university.edu',
+  //       status: 'active',
+  //       role: 'uploader',
+  //       lastActive: '2024-01-15',
+  //       documentsUploaded: 45,
+  //       joinDate: '2023-06-15'
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'Sarah Johnson',
+  //       email: 'sarah.j@college.edu',
+  //       status: 'pending',
+  //       role: 'uploader',
+  //       lastActive: '2024-01-10',
+  //       documentsUploaded: 0,
+  //       joinDate: '2024-01-10'
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'Mike Wilson',
+  //       email: 'mike.w@institute.edu',
+  //       status: 'disabled',
+  //       role: 'uploader',
+  //       lastActive: '2023-12-20',
+  //       documentsUploaded: 23,
+  //       joinDate: '2023-08-20'
+  //     }
+  //   ]);
+
+  //   setVerifiers([
+  //     {
+  //       id: 1,
+  //       name: 'Dr. Emily Davis',
+  //       email: 'emily.davis@university.edu',
+  //       status: 'active',
+  //       role: 'verifier',
+  //       lastActive: '2024-01-15',
+  //       documentsVerified: 156,
+  //       joinDate: '2023-05-10'
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'Prof. Robert Brown',
+  //       email: 'robert.b@college.edu',
+  //       status: 'active',
+  //       role: 'verifier',
+  //       lastActive: '2024-01-14',
+  //       documentsVerified: 89,
+  //       joinDate: '2023-07-15'
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'Dr. Lisa Garcia',
+  //       email: 'lisa.g@institute.edu',
+  //       status: 'pending',
+  //       role: 'verifier',
+  //       lastActive: '2024-01-12',
+  //       documentsVerified: 0,
+  //       joinDate: '2024-01-12'
+  //     }
+  //   ]);
+
+  //   setIsLoading(false);
+  // };
   const loadUsers = async () => {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Mock data
+    // Mock Uploaders (Jharkhand context)
     setUploaders([
       {
         id: 1,
-        name: 'John Smith',
-        email: 'john.smith@university.edu',
+        name: 'Amit Kumar',
+        email: 'amit.kumar@ranchiuniversity.ac.in',
         status: 'active',
         role: 'uploader',
-        lastActive: '2024-01-15',
-        documentsUploaded: 45,
-        joinDate: '2023-06-15'
+        lastActive: '2024-02-10',
+        documentsUploaded: 42,
+        joinDate: '2023-07-01'
       },
       {
         id: 2,
-        name: 'Sarah Johnson',
-        email: 'sarah.j@college.edu',
+        name: 'Priya Singh',
+        email: 'priya.singh@bitmesra.ac.in',
         status: 'pending',
         role: 'uploader',
-        lastActive: '2024-01-10',
+        lastActive: '2024-02-09',
         documentsUploaded: 0,
-        joinDate: '2024-01-10'
+        joinDate: '2024-02-09'
       },
       {
         id: 3,
-        name: 'Mike Wilson',
-        email: 'mike.w@institute.edu',
+        name: 'Ravi Prasad',
+        email: 'ravi.prasad@kolhanuniversity.ac.in',
         status: 'disabled',
         role: 'uploader',
-        lastActive: '2023-12-20',
-        documentsUploaded: 23,
-        joinDate: '2023-08-20'
+        lastActive: '2023-12-18',
+        documentsUploaded: 27,
+        joinDate: '2023-08-12'
       }
     ]);
-
+  
+    // Mock Verifiers (Jharkhand context)
     setVerifiers([
       {
         id: 1,
-        name: 'Dr. Emily Davis',
-        email: 'emily.davis@university.edu',
+        name: 'Dr. Sandeep Das',
+        email: 'sandeep.das@ranchiuniversity.ac.in',
         status: 'active',
         role: 'verifier',
-        lastActive: '2024-01-15',
-        documentsVerified: 156,
-        joinDate: '2023-05-10'
+        lastActive: '2024-02-10',
+        documentsVerified: 163,
+        joinDate: '2023-05-20'
       },
       {
         id: 2,
-        name: 'Prof. Robert Brown',
-        email: 'robert.b@college.edu',
+        name: 'Prof. Anjali Kumari',
+        email: 'anjali.kumari@vinobabhaveuniversity.ac.in',
         status: 'active',
         role: 'verifier',
-        lastActive: '2024-01-14',
-        documentsVerified: 89,
-        joinDate: '2023-07-15'
+        lastActive: '2024-02-09',
+        documentsVerified: 95,
+        joinDate: '2023-07-30'
       },
       {
         id: 3,
-        name: 'Dr. Lisa Garcia',
-        email: 'lisa.g@institute.edu',
+        name: 'Dr. Rajesh Kumar',
+        email: 'rajesh.kumar@bitmesra.ac.in',
         status: 'pending',
         role: 'verifier',
-        lastActive: '2024-01-12',
+        lastActive: '2024-02-08',
         documentsVerified: 0,
-        joinDate: '2024-01-12'
+        joinDate: '2024-02-08'
       }
     ]);
-
+  
     setIsLoading(false);
   };
+  
 
   const handleUserAction = async (userId, action, userType) => {
     try {

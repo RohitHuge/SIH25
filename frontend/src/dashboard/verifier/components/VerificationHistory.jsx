@@ -11,80 +11,155 @@ const VerificationHistory = () => {
   const [sortBy, setSortBy] = useState('date');
 
   // Mock data
+  // const mockVerifications = [
+  //   {
+  //     id: 'VER001',
+  //     documentId: 'DOC_1705312200000',
+  //     studentName: 'John Doe',
+  //     studentId: 'STU001',
+  //     degree: 'Bachelor of Computer Science',
+  //     status: 'verified',
+  //     method: 'QR Code',
+  //     verifiedAt: '2024-01-15T10:30:00Z',
+  //     verifiedBy: 'Alice Johnson',
+  //     confidence: 95
+  //   },
+  //   {
+  //     id: 'VER002',
+  //     documentId: 'DOC_1705312200001',
+  //     studentName: 'Jane Smith',
+  //     studentId: 'STU002',
+  //     degree: 'Master of Business Administration',
+  //     status: 'verified',
+  //     method: 'OCR Analysis',
+  //     verifiedAt: '2024-01-14T14:20:00Z',
+  //     verifiedBy: 'Bob Wilson',
+  //     confidence: 87
+  //   },
+  //   {
+  //     id: 'VER003',
+  //     documentId: 'DOC_1705312200002',
+  //     studentName: 'Mike Johnson',
+  //     studentId: 'STU003',
+  //     degree: 'Bachelor of Engineering',
+  //     status: 'failed',
+  //     method: 'QR Code',
+  //     verifiedAt: '2024-01-13T09:15:00Z',
+  //     verifiedBy: 'Alice Johnson',
+  //     confidence: 0
+  //   },
+  //   {
+  //     id: 'VER004',
+  //     documentId: 'DOC_1705312200003',
+  //     studentName: 'Sarah Wilson',
+  //     studentId: 'STU004',
+  //     degree: 'Master of Science',
+  //     status: 'verified',
+  //     method: 'OCR Analysis',
+  //     verifiedAt: '2024-01-12T16:45:00Z',
+  //     verifiedBy: 'Bob Wilson',
+  //     confidence: 92
+  //   },
+  //   {
+  //     id: 'VER005',
+  //     documentId: 'DOC_1705312200004',
+  //     studentName: 'David Brown',
+  //     studentId: 'STU005',
+  //     degree: 'Bachelor of Arts',
+  //     status: 'pending',
+  //     method: 'OCR Analysis',
+  //     verifiedAt: '2024-01-11T11:30:00Z',
+  //     verifiedBy: 'Alice Johnson',
+  //     confidence: 0
+  //   },
+  //   {
+  //     id: 'VER006',
+  //     documentId: 'DOC_1705312200005',
+  //     studentName: 'Emily Davis',
+  //     studentId: 'STU006',
+  //     degree: 'Master of Fine Arts',
+  //     status: 'verified',
+  //     method: 'QR Code',
+  //     verifiedAt: '2024-01-10T08:15:00Z',
+  //     verifiedBy: 'Bob Wilson',
+  //     confidence: 98
+  //   }
+  // ];
   const mockVerifications = [
     {
       id: 'VER001',
-      documentId: 'DOC_1705312200000',
-      studentName: 'John Doe',
-      studentId: 'STU001',
-      degree: 'Bachelor of Computer Science',
+      documentId: 'DOC_1705402200000',
+      studentName: 'Amit Kumar',
+      studentId: 'JHK001',
+      degree: 'Bachelor of Arts in History',
       status: 'verified',
       method: 'QR Code',
-      verifiedAt: '2024-01-15T10:30:00Z',
-      verifiedBy: 'Alice Johnson',
-      confidence: 95
+      verifiedAt: '2024-02-10T10:20:00Z',
+      verifiedBy: 'Ritika Sharma',
+      confidence: 94
     },
     {
       id: 'VER002',
-      documentId: 'DOC_1705312200001',
-      studentName: 'Jane Smith',
-      studentId: 'STU002',
-      degree: 'Master of Business Administration',
+      documentId: 'DOC_1705402200001',
+      studentName: 'Priya Singh',
+      studentId: 'JHK002',
+      degree: 'Master of Science in Physics',
       status: 'verified',
       method: 'OCR Analysis',
-      verifiedAt: '2024-01-14T14:20:00Z',
-      verifiedBy: 'Bob Wilson',
-      confidence: 87
+      verifiedAt: '2024-02-09T15:40:00Z',
+      verifiedBy: 'Sandeep Das',
+      confidence: 89
     },
     {
       id: 'VER003',
-      documentId: 'DOC_1705312200002',
-      studentName: 'Mike Johnson',
-      studentId: 'STU003',
-      degree: 'Bachelor of Engineering',
+      documentId: 'DOC_1705402200002',
+      studentName: 'Ravi Prasad',
+      studentId: 'JHK003',
+      degree: 'Bachelor of Technology in Civil Engineering',
       status: 'failed',
       method: 'QR Code',
-      verifiedAt: '2024-01-13T09:15:00Z',
-      verifiedBy: 'Alice Johnson',
+      verifiedAt: '2024-02-08T09:25:00Z',
+      verifiedBy: 'Ritika Sharma',
       confidence: 0
     },
     {
       id: 'VER004',
-      documentId: 'DOC_1705312200003',
-      studentName: 'Sarah Wilson',
-      studentId: 'STU004',
-      degree: 'Master of Science',
+      documentId: 'DOC_1705402200003',
+      studentName: 'Anjali Kumari',
+      studentId: 'JHK004',
+      degree: 'Master of Commerce',
       status: 'verified',
       method: 'OCR Analysis',
-      verifiedAt: '2024-01-12T16:45:00Z',
-      verifiedBy: 'Bob Wilson',
-      confidence: 92
+      verifiedAt: '2024-02-07T18:00:00Z',
+      verifiedBy: 'Sandeep Das',
+      confidence: 91
     },
     {
       id: 'VER005',
-      documentId: 'DOC_1705312200004',
-      studentName: 'David Brown',
-      studentId: 'STU005',
-      degree: 'Bachelor of Arts',
+      documentId: 'DOC_1705402200004',
+      studentName: 'Saurav Kumar',
+      studentId: 'JHK005',
+      degree: 'Bachelor of Computer Applications',
       status: 'pending',
       method: 'OCR Analysis',
-      verifiedAt: '2024-01-11T11:30:00Z',
-      verifiedBy: 'Alice Johnson',
+      verifiedAt: '2024-02-06T11:10:00Z',
+      verifiedBy: 'Ritika Sharma',
       confidence: 0
     },
     {
       id: 'VER006',
-      documentId: 'DOC_1705312200005',
-      studentName: 'Emily Davis',
-      studentId: 'STU006',
-      degree: 'Master of Fine Arts',
+      documentId: 'DOC_1705402200005',
+      studentName: 'Sunita Devi',
+      studentId: 'JHK006',
+      degree: 'Master of Social Work',
       status: 'verified',
       method: 'QR Code',
-      verifiedAt: '2024-01-10T08:15:00Z',
-      verifiedBy: 'Bob Wilson',
-      confidence: 98
+      verifiedAt: '2024-02-05T08:30:00Z',
+      verifiedBy: 'Sandeep Das',
+      confidence: 97
     }
   ];
+  
 
   useEffect(() => {
     // Simulate API call
